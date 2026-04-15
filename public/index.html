@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CardGen AI — Генератор карточек товаров</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    :root {
+      --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    }
+    .gradient-bg { background: var(--gradient); }
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-shadow { box-shadow: 0 4px 24px rgba(99,102,241,0.12); }
+    .card-hover { transition: all 0.25s; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.2); }
+    .tab-active { background: var(--gradient); color: white; }
+    .tab-inactive { background: #f1f5f9; color: #64748b; }
+    .mp-btn-active { border: 2px solid #6366f1; background: #eef2ff; }
+    .mp-btn-inactive { border: 2px solid #e2e8f0; background: white; }
+    .spinner { animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .fade-in { animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .copy-btn { transition: all 0.15s; }
+    .copy-btn:hover { background: #6366f1; color: white; }
+    .progress-bar { transition: width 0.4s ease; }
+    textarea, input, select { outline: none; }
+    textarea:focus, input:focus, select:focus { box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .tag-chip { background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; }
+    .section-divider { border-top: 1px solid #f1f5f9; }
+    .nav-link { transition: color 0.15s; }
+    .nav-link:hover { color: #6366f1; }
+    .tooltip { position: relative; }
+    .tooltip:hover::after {
+      content: attr(data-tip);
+      position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%);
+      background: #1e293b; color: white; padding: 4px 10px; border-radius: 6px;
+      font-size: 12px; white-space: nowrap; z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+          <i class="fa-solid fa-bolt text-white text-sm"></i>
+        </div>
+        <span class="font-bold text-xl text-slate-800">CardGen <span class="gradient-text">AI</span></span>
+        <span class="hidden sm:block text-xs bg-violet-100 text-violet-600 px-2 py-0.5 rounded-full font-medium">Beta</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm text-slate-500">
+        <a href="#features" class="nav-link">Возможности</a>
+        <a href="#pricing" class="nav-link">Тарифы</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+      <button onclick="scrollToApp()" class="gradient-bg text-white text-sm font-medium px-4 py-2 rounded-lg hover:opacity-90 transition">
+        Попробовать бесплатно
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 text-center">
+    <div class="inline-flex items-center gap-2 bg-violet-50 text-violet-600 text-sm font-medium px-4 py-2 rounded-full mb-6 border border-violet-100">
+      <i class="fa-solid fa-sparkles text-xs"></i>
+      Работает на топовых нейросетях
+    </div>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+      Создавай <span class="gradient-text">продающие</span><br/>карточки товаров<br/>за секунды
+    </h1>
+    <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-8">
+      ИИ-генератор SEO-оптимизированных заголовков, описаний и ключевых слов<br/>
+      для <strong>Ozon</strong> и <strong>Wildberries</strong>
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <div class="flex items-center gap-2 text-sm text-slate-500 bg-white px-4 py-2 rounded-full border border-slate-100 card-shadow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ozon_logo.svg/200px-Ozon_logo.svg.png" class="h-5" alt="Ozon" />
+        <span>Ozon</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-slate-500 bg-white px-4 py-2 rounded-full border border-slate-100 card-shadow">
+        <span class="text-purple-600 font-bold text-base">WB</span>
+        <span>Wildberries</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-slate-500 bg-white px-4 py-2 rounded-full border border-slate-100 card-shadow">
+        <i class="fa-solid fa-image text-indigo-400"></i>
+        <span>Промпты для изображений</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-slate-500 bg-white px-4 py-2 rounded-full border border-slate-100 card-shadow">
+        <i class="fa-solid fa-magnifying-glass text-indigo-400"></i>
+        <span>SEO-оптимизация</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN APP -->
+  <section id="app" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="grid lg:grid-cols-5 gap-6">
+
+      <!-- LEFT: INPUT PANEL -->
+      <div class="lg:col-span-2 space-y-4">
+
+          <!-- Скрытое поле — сервер использует свой ключ -->
+          <input id="apiKey" type="hidden" value="" />
+
+        <!-- PRODUCT INFO -->
+        <div class="bg-white rounded-2xl p-5 card-shadow border border-slate-100">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 bg-indigo-100 rounded-md flex items-center justify-center">
+              <i class="fa-solid fa-box text-indigo-500 text-xs"></i>
+            </div>
+            <h3 class="font-semibold text-slate-700 text-sm">Информация о товаре</h3>
+          </div>
+
+          <div class="space-y-3">
+            <div>
+              <label class="text-xs font-medium text-slate-500 mb-1 block">Название товара *</label>
+              <input id="productName" type="text" placeholder="Например: Беспроводные наушники Sony WH-1000XM5"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 transition" />
+            </div>
+
+            <div>
+              <label class="text-xs font-medium text-slate-500 mb-1 block">Категория *</label>
+              <select id="category" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 transition">
+                <option value="">Выберите категорию...</option>
+                <optgroup label="Электроника">
+                  <option>Наушники и гарнитуры</option>
+                  <option>Смартфоны</option>
+                  <option>Ноутбуки</option>
+                  <option>Планшеты</option>
+                  <option>Умные часы</option>
+                  <option>Фото и видео</option>
+                  <option>Аксессуары для телефонов</option>
+                </optgroup>
+                <optgroup label="Дом и сад">
+                  <option>Бытовая техника</option>
+                  <option>Мебель</option>
+                  <option>Декор и интерьер</option>
+                  <option>Освещение</option>
+                  <option>Кухонные товары</option>
+                  <option>Садовый инвентарь</option>
+                </optgroup>
+                <optgroup label="Одежда и обувь">
+                  <option>Мужская одежда</option>
+                  <option>Женская одежда</option>
+                  <option>Детская одежда</option>
+                  <option>Обувь</option>
+                  <option>Аксессуары</option>
+                </optgroup>
+                <optgroup label="Спорт и хобби">
+                  <option>Спортивное питание</option>
+                  <option>Тренажёры</option>
+                  <option>Туризм и outdoor</option>
+                  <option>Игры и игрушки</option>
+                </optgroup>
+                <optgroup label="Красота и здоровье">
+                  <option>Косметика</option>
+                  <option>Парфюмерия</option>
+                  <option>Уход за собой</option>
+                  <option>Медицинские товары</option>
+                </optgroup>
+                <optgroup label="Другое">
+                  <option>Автотовары</option>
+                  <option>Книги и канцтовары</option>
+                  <option>Зоотовары</option>
+                  <option>Продукты питания</option>
+                  <option>Другое</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-xs font-medium text-slate-500 mb-1 block">Ключевые характеристики *</label>
+              <textarea id="features" rows="4" placeholder="Опишите главные преимущества и характеристики товара.
+Например:
+• Активное шумоподавление 30dB
+• Bluetooth 5.0, радиус 10м
+• Заряд 30 часов
+• Вес 250г, складная конструкция"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 transition resize-none"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- MARKETPLACE SELECTOR -->
+        <div class="bg-white rounded-2xl p-5 card-shadow border border-slate-100">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 bg-blue-100 rounded-md flex items-center justify-center">
+              <i class="fa-solid fa-store text-blue-500 text-xs"></i>
+            </div>
+            <h3 class="font-semibold text-slate-700 text-sm">Маркетплейс</h3>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="selectMP('ozon')" id="mp-ozon"
+              class="mp-btn mp-btn-inactive rounded-xl p-3 text-center transition hover:bg-slate-50 cursor-pointer">
+              <div class="text-blue-500 font-bold text-base mb-1">O</div>
+              <div class="text-xs text-slate-600 font-medium">Ozon</div>
+            </button>
+            <button onclick="selectMP('wildberries')" id="mp-wildberries"
+              class="mp-btn mp-btn-inactive rounded-xl p-3 text-center transition hover:bg-slate-50 cursor-pointer">
+              <div class="text-purple-600 font-bold text-base mb-1">WB</div>
+              <div class="text-xs text-slate-600 font-medium">WB</div>
+            </button>
+            <button onclick="selectMP('both')" id="mp-both"
+              class="mp-btn mp-btn-inactive rounded-xl p-3 text-center transition hover:bg-slate-50 cursor-pointer">
+              <div class="text-indigo-500 font-bold text-base mb-1">+</div>
+              <div class="text-xs text-slate-600 font-medium">Оба</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- TONE & STYLE -->
+        <div class="bg-white rounded-2xl p-5 card-shadow border border-slate-100">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 bg-pink-100 rounded-md flex items-center justify-center">
+              <i class="fa-solid fa-palette text-pink-500 text-xs"></i>
+            </div>
+            <h3 class="font-semibold text-slate-700 text-sm">Тон и стиль</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="selectTone('professional')" id="tone-professional"
+              class="tone-btn rounded-xl p-3 border-2 border-indigo-500 bg-indigo-50 text-center transition cursor-pointer">
+              <i class="fa-solid fa-briefcase text-indigo-500 text-sm mb-1 block"></i>
+              <div class="text-xs text-slate-700 font-medium">Профессиональный</div>
+            </button>
+            <button onclick="selectTone('friendly')" id="tone-friendly"
+              class="tone-btn rounded-xl p-3 border-2 border-slate-200 bg-white text-center transition cursor-pointer hover:bg-slate-50">
+              <i class="fa-solid fa-face-smile text-amber-500 text-sm mb-1 block"></i>
+              <div class="text-xs text-slate-700 font-medium">Дружелюбный</div>
+            </button>
+            <button onclick="selectTone('premium')" id="tone-premium"
+              class="tone-btn rounded-xl p-3 border-2 border-slate-200 bg-white text-center transition cursor-pointer hover:bg-slate-50">
+              <i class="fa-solid fa-crown text-yellow-500 text-sm mb-1 block"></i>
+              <div class="text-xs text-slate-700 font-medium">Премиальный</div>
+            </button>
+            <button onclick="selectTone('simple')" id="tone-simple"
+              class="tone-btn rounded-xl p-3 border-2 border-slate-200 bg-white text-center transition cursor-pointer hover:bg-slate-50">
+              <i class="fa-solid fa-feather text-green-500 text-sm mb-1 block"></i>
+              <div class="text-xs text-slate-700 font-medium">Простой</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- GENERATE BUTTON -->
+        <button id="generateBtn" onclick="generateContent()" class="w-full gradient-bg text-white font-bold py-4 rounded-2xl text-base hover:opacity-90 transition flex items-center justify-center gap-3 card-shadow">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          Сгенерировать контент
+        </button>
+
+        <!-- IMAGE PROMPT SECTION -->
+        <div class="bg-white rounded-2xl p-5 card-shadow border border-slate-100">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 bg-emerald-100 rounded-md flex items-center justify-center">
+              <i class="fa-solid fa-image text-emerald-500 text-xs"></i>
+            </div>
+            <h3 class="font-semibold text-slate-700 text-sm">Промпт для изображения</h3>
+          </div>
+          <div class="mb-3">
+            <label class="text-xs font-medium text-slate-500 mb-1 block">Стиль фото</label>
+            <select id="imageStyle" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 transition">
+              <option value="white">Белый фон (студия)</option>
+              <option value="lifestyle">Lifestyle (в интерьере)</option>
+              <option value="minimal">Минималистичный</option>
+              <option value="premium">Премиальный</option>
+            </select>
+          </div>
+          <button onclick="generateImagePrompt()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-wand-sparkles text-xs"></i>
+            Создать промпт для фото
+          </button>
+          <div id="imagePromptResult" class="hidden mt-3 fade-in">
+            <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-3">
+              <div class="flex items-start justify-between gap-2">
+                <p id="imagePromptText" class="text-xs text-slate-600 leading-relaxed flex-1"></p>
+                <button onclick="copyText('imagePromptText')" class="shrink-0 text-xs bg-white border border-slate-200 px-2 py-1 rounded-lg copy-btn text-slate-500 font-medium">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-2">
+              <i class="fa-solid fa-circle-info mr-1"></i>Используйте в Midjourney, DALL-E, Stable Diffusion
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: RESULTS -->
+      <div class="lg:col-span-3 space-y-4">
+
+        <!-- EMPTY STATE -->
+        <div id="emptyState" class="bg-white rounded-2xl p-12 card-shadow border border-slate-100 text-center">
+          <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-sparkles text-white text-3xl"></i>
+          </div>
+          <h2 class="text-xl font-bold text-slate-800 mb-3">Готов к работе</h2>
+          <p class="text-slate-400 text-sm max-w-xs mx-auto mb-6">
+            Введите данные о товаре слева и нажмите «Сгенерировать контент» — ИИ создаст оптимизированный текст за несколько секунд
+          </p>
+          <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto">
+            <div class="bg-slate-50 rounded-xl p-3 text-center">
+              <div class="text-2xl font-bold gradient-text">5с</div>
+              <div class="text-xs text-slate-400 mt-1">Генерация</div>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-3 text-center">
+              <div class="text-2xl font-bold gradient-text">SEO</div>
+              <div class="text-xs text-slate-400 mt-1">Оптимизация</div>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-3 text-center">
+              <div class="text-2xl font-bold gradient-text">2MP</div>
+              <div class="text-xs text-slate-400 mt-1">Маркетплейса</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOADING STATE -->
+        <div id="loadingState" class="hidden bg-white rounded-2xl p-12 card-shadow border border-slate-100 text-center">
+          <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-spinner spinner text-white text-2xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-slate-700 mb-2">ИИ генерирует контент...</h3>
+          <p id="loadingMsg" class="text-slate-400 text-sm">Анализирую характеристики товара</p>
+          <div class="mt-4 bg-slate-100 rounded-full h-1.5 max-w-xs mx-auto overflow-hidden">
+            <div id="progressBar" class="progress-bar h-full gradient-bg rounded-full" style="width:10%"></div>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="resultsContainer" class="hidden space-y-4 fade-in"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Почему CardGen AI?</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Всё что нужно для успешных продаж на маркетплейсах</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 card-hover">
+          <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
+            <i class="fa-solid fa-bolt text-white"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 mb-2">Быстрая генерация</h3>
+          <p class="text-slate-500 text-sm">Полный комплект контента за 5-10 секунд. Заголовок, описание, характеристики и ключевые слова.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 card-hover">
+          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 mb-2">SEO-оптимизация</h3>
+          <p class="text-slate-500 text-sm">Контент учитывает алгоритмы поиска Ozon и Wildberries. Выходите в топ органической выдачи.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 card-hover">
+          <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-4">
+            <i class="fa-solid fa-image text-white"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 mb-2">Промпты для фото</h3>
+          <p class="text-slate-500 text-sm">Получите готовые промпты для Midjourney и DALL-E для создания продающих изображений товара.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Тарифы</h2>
+        <p class="text-slate-500">Простые и понятные тарифы для любого объёма задач</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 card-shadow">
+          <h3 class="font-bold text-slate-800 mb-1">Старт</h3>
+          <div class="text-3xl font-extrabold text-slate-900 mb-4">Бесплатно</div>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>50 генераций/месяц</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Ozon или WB</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Базовые тона</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-400 text-xs"></i>Промпты для фото</li>
+          </ul>
+          <a href="https://t.me/ivsuvorov" target="_blank" class="block w-full bg-slate-100 text-slate-700 font-medium py-2.5 rounded-xl text-sm text-center hover:bg-slate-200 transition">Начать</a>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border-2 border-indigo-500 card-shadow relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 gradient-bg text-white text-xs font-bold px-3 py-1 rounded-full">Популярный</div>
+          <h3 class="font-bold text-slate-800 mb-1">Про</h3>
+          <div class="text-3xl font-extrabold gradient-text mb-4">990₽<span class="text-base text-slate-400 font-normal">/мес</span></div>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>1000 генераций/месяц</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Ozon + WB одновременно</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Все тона и стили</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Промпты для фото</li>
+          </ul>
+          <a href="https://t.me/ivsuvorov" target="_blank" class="block w-full gradient-bg text-white font-medium py-2.5 rounded-xl text-sm text-center hover:opacity-90 transition">Подключить</a>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 card-shadow">
+          <h3 class="font-bold text-slate-800 mb-1">Бизнес</h3>
+          <div class="text-3xl font-extrabold text-slate-900 mb-4">2990₽<span class="text-base text-slate-400 font-normal">/мес</span></div>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Безлимит генераций</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>API доступ</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Приоритетная поддержка</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i>Экспорт в Excel/CSV</li>
+          </ul>
+          <a href="https://t.me/ivsuvorov" target="_blank" class="block w-full bg-slate-100 text-slate-700 font-medium py-2.5 rounded-xl text-sm text-center hover:bg-slate-200 transition">Связаться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Частые вопросы</h2>
+      <div class="space-y-3" id="faqContainer">
+        <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-5 py-4 font-medium text-slate-800 flex justify-between items-center hover:bg-slate-50">
+            Нужна ли регистрация для начала работы?
+            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform"></i>
+          </button>
+          <div class="faq-body hidden px-5 pb-4 text-sm text-slate-500">
+            Нет — на тарифе «Старт» можно сразу начать генерировать контент без регистрации. На тарифах Про и Бизнес доступен личный кабинет и история генераций.
+          </div>
+        </div>
+        <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-5 py-4 font-medium text-slate-800 flex justify-between items-center hover:bg-slate-50">
+            Насколько качественный контент?
+            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform"></i>
+          </button>
+          <div class="faq-body hidden px-5 pb-4 text-sm text-slate-500">
+            Сервис использует передовые языковые модели и генерирует профессиональные тексты с учётом SEO-требований конкретного маркетплейса. Рекомендуем делать небольшую правку под ваш бренд.
+          </div>
+        </div>
+        <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-5 py-4 font-medium text-slate-800 flex justify-between items-center hover:bg-slate-50">
+            Можно ли генерировать картинки?
+            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform"></i>
+          </button>
+          <div class="faq-body hidden px-5 pb-4 text-sm text-slate-500">
+            Сервис генерирует детальные промпты для нейросетей. Промпты оптимизированы под Midjourney, DALL-E 3 и Stable Diffusion для создания продающих фото.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-7 h-7 gradient-bg rounded-lg flex items-center justify-center">
+          <i class="fa-solid fa-bolt text-white text-xs"></i>
+        </div>
+        <span class="font-bold text-white">CardGen AI</span>
+      </div>
+      <p class="text-sm">ИИ-генератор карточек товаров для Ozon и Wildberries</p>
+      <p class="text-xs mt-3 text-slate-600">© 2025 CardGen AI. Beta версия.</p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div id="toast" class="fixed bottom-6 right-6 hidden z-50">
+    <div class="bg-slate-900 text-white px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-2 shadow-xl">
+      <i id="toastIcon" class="fa-solid fa-check text-green-400"></i>
+      <span id="toastMsg">Скопировано!</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
