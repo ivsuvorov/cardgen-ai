@@ -7,6 +7,4 @@ services:
     envVars:
       - key: DEEPSEEK_API_KEY
         value: sk-22091e53fa7b44d4aa02f600f25e153b
-      - key: PORT
-        generateValue: false
     autoDeploy: true
