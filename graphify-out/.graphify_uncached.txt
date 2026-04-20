@@ -1,3 +1,0 @@
-/root/.claude/CLAUDE.md
-/root/.claude/skills/session-start-hook/SKILL.md
-/root/.claude/skills/graphify/SKILL.md
