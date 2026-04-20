@@ -1,0 +1,529 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Community 0",
+      "x": 0,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "1"
+    },
+    {
+      "id": "n_skill_graphify_raw_folder_workflow",
+      "type": "file",
+      "file": "graphify/obsidian/Karpathy raw folder workflow.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_neo4j_export",
+      "type": "file",
+      "file": "graphify/obsidian/Neo4j Cypher export.md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_obsidian_vault",
+      "type": "file",
+      "file": "graphify/obsidian/Obsidian vault export.md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_whisper_transcription",
+      "type": "file",
+      "file": "graphify/obsidian/Whisper audio transcription.md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_name",
+      "type": "file",
+      "file": "graphify/obsidian/graphify skill.md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claude_graphify_trigger",
+      "type": "file",
+      "file": "graphify/obsidian/graphify trigger graphify.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_incremental_update",
+      "type": "file",
+      "file": "graphify/obsidian/incremental --update mode.md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_html_output",
+      "type": "file",
+      "file": "graphify/obsidian/interactive HTML output.md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_knowledge_graph",
+      "type": "file",
+      "file": "graphify/obsidian/knowledge graph output.md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Community 1",
+      "x": 740,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "n_skill_session_start_hook_claude_code_remote",
+      "type": "file",
+      "file": "graphify/obsidian/CLAUDE_CODE_REMOTE env var.md",
+      "x": 760,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_sessionstart",
+      "type": "file",
+      "file": "graphify/obsidian/SessionStart hook event.md",
+      "x": 960,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_async_mode",
+      "type": "file",
+      "file": "graphify/obsidian/async hook mode.md",
+      "x": 1160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_dependency_install",
+      "type": "file",
+      "file": "graphify/obsidian/dependency installation idempotent.md",
+      "x": 760,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_git_hook",
+      "type": "file",
+      "file": "graphify/obsidian/git post-commit hook integration.md",
+      "x": 960,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_env_vars",
+      "type": "file",
+      "file": "graphify/obsidian/hook environment variables.md",
+      "x": 1160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_rationale_async",
+      "type": "file",
+      "file": "graphify/obsidian/rationale async mode trade-off latency vs race condition.md",
+      "x": 760,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_name",
+      "type": "file",
+      "file": "graphify/obsidian/session-start-hook skill.md",
+      "x": 960,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Community 2",
+      "x": 1480,
+      "y": 0,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_skill_graphify_graph_json",
+      "type": "file",
+      "file": "graphify/obsidian/GraphRAG-ready JSON output.md",
+      "x": 1500,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_mcp_server",
+      "type": "file",
+      "file": "graphify/obsidian/MCP stdio server.md",
+      "x": 1700,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_rationale_persistent_graph",
+      "type": "file",
+      "file": "graphify/obsidian/rationale persistent graph across sessions.md",
+      "x": 1900,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Community 3",
+      "x": 0,
+      "y": 500,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_skill_graphify_claude_md_integration",
+      "type": "file",
+      "file": "graphify/obsidian/CLAUDE.md native integration.md",
+      "x": 20,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claude_graphify",
+      "type": "file",
+      "file": "graphify/obsidian/graphify skill reference.md",
+      "x": 220,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_session_start_hook_settings_json",
+      "type": "file",
+      "file": "graphify/obsidian/settings.json hook registration.md",
+      "x": 420,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Community 4",
+      "x": 740,
+      "y": 500,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_skill_graphify_ast_extraction",
+      "type": "file",
+      "file": "graphify/obsidian/AST structural extraction.md",
+      "x": 760,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_semantic_extraction",
+      "type": "file",
+      "file": "graphify/obsidian/semantic extraction subagents.md",
+      "x": 960,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Community 5",
+      "x": 1480,
+      "y": 500,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_skill_graphify_community_detection",
+      "type": "file",
+      "file": "graphify/obsidian/community detection.md",
+      "x": 1500,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_rationale_cross_doc",
+      "type": "file",
+      "file": "graphify/obsidian/rationale cross-document community surprise discovery.md",
+      "x": 1700,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Community 6",
+      "x": 0,
+      "y": 980,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_skill_graphify_graph_report",
+      "type": "file",
+      "file": "graphify/obsidian/GRAPH_REPORT.md audit trail.md",
+      "x": 20,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_skill_graphify_rationale_audit_trail",
+      "type": "file",
+      "file": "graphify/obsidian/rationale honest audit trail EXTRACTEDINFERREDAMBIGUOUS.md",
+      "x": 220,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_claude_graphify_skill_graphify_name",
+      "fromNode": "n_claude_graphify",
+      "toNode": "n_skill_graphify_name",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claude_graphify_skill_graphify_claude_md_integration",
+      "fromNode": "n_claude_graphify",
+      "toNode": "n_skill_graphify_claude_md_integration",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claude_graphify_trigger_skill_graphify_name",
+      "fromNode": "n_claude_graphify_trigger",
+      "toNode": "n_skill_graphify_name",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_knowledge_graph",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_knowledge_graph",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_community_detection",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_community_detection",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_html_output",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_html_output",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_graph_json",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_graph_json",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_graph_report",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_graph_report",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_ast_extraction",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_ast_extraction",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_semantic_extraction",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_semantic_extraction",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_whisper_transcription",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_whisper_transcription",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_obsidian_vault",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_obsidian_vault",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_neo4j_export",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_neo4j_export",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_mcp_server",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_mcp_server",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_raw_folder_workflow",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_raw_folder_workflow",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_incremental_update",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_incremental_update",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_git_hook",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_git_hook",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_name_skill_graphify_claude_md_integration",
+      "fromNode": "n_skill_graphify_name",
+      "toNode": "n_skill_graphify_claude_md_integration",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_community_detection_skill_graphify_rationale_cross_doc",
+      "fromNode": "n_skill_graphify_community_detection",
+      "toNode": "n_skill_graphify_rationale_cross_doc",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_graph_json_skill_graphify_rationale_persistent_graph",
+      "fromNode": "n_skill_graphify_graph_json",
+      "toNode": "n_skill_graphify_rationale_persistent_graph",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_graph_json_skill_graphify_mcp_server",
+      "fromNode": "n_skill_graphify_graph_json",
+      "toNode": "n_skill_graphify_mcp_server",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_graph_report_skill_graphify_rationale_audit_trail",
+      "fromNode": "n_skill_graphify_graph_report",
+      "toNode": "n_skill_graphify_rationale_audit_trail",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_graphify_ast_extraction_skill_graphify_semantic_extraction",
+      "fromNode": "n_skill_graphify_ast_extraction",
+      "toNode": "n_skill_graphify_semantic_extraction",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_skill_graphify_git_hook_skill_session_start_hook_sessionstart",
+      "fromNode": "n_skill_graphify_git_hook",
+      "toNode": "n_skill_session_start_hook_sessionstart",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_skill_graphify_claude_md_integration_skill_session_start_hook_settings_json",
+      "fromNode": "n_skill_graphify_claude_md_integration",
+      "toNode": "n_skill_session_start_hook_settings_json",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_name_skill_session_start_hook_sessionstart",
+      "fromNode": "n_skill_session_start_hook_name",
+      "toNode": "n_skill_session_start_hook_sessionstart",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_name_skill_session_start_hook_async_mode",
+      "fromNode": "n_skill_session_start_hook_name",
+      "toNode": "n_skill_session_start_hook_async_mode",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_name_skill_session_start_hook_env_vars",
+      "fromNode": "n_skill_session_start_hook_name",
+      "toNode": "n_skill_session_start_hook_env_vars",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_name_skill_session_start_hook_settings_json",
+      "fromNode": "n_skill_session_start_hook_name",
+      "toNode": "n_skill_session_start_hook_settings_json",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_name_skill_session_start_hook_dependency_install",
+      "fromNode": "n_skill_session_start_hook_name",
+      "toNode": "n_skill_session_start_hook_dependency_install",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_async_mode_skill_session_start_hook_rationale_async",
+      "fromNode": "n_skill_session_start_hook_async_mode",
+      "toNode": "n_skill_session_start_hook_rationale_async",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_skill_session_start_hook_env_vars_skill_session_start_hook_claude_code_remote",
+      "fromNode": "n_skill_session_start_hook_env_vars",
+      "toNode": "n_skill_session_start_hook_claude_code_remote",
+      "label": "references [EXTRACTED]"
+    }
+  ]
+}
