@@ -1,99 +1,81 @@
-# Graph Report - /root/.claude  (2026-04-20)
+# Graph Report - /root/.claude  (2026-04-21)
 
 ## Corpus Check
-- Corpus is ~7,543 words - fits in a single context window. You may not need a graph.
+- Corpus is ~7,593 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 29 nodes · 32 edges · 7 communities detected
-- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.71)
-- Token cost: 3,200 input · 1,100 output
+- 30 nodes · 35 edges · 5 communities detected
+- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.76)
+- Token cost: 3,200 input · 1,800 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Graphify Skill Core|Graphify Skill Core]]
-- [[_COMMUNITY_Git Hooks & Session Setup|Git Hooks & Session Setup]]
-- [[_COMMUNITY_Persistent Graph & MCP|Persistent Graph & MCP]]
-- [[_COMMUNITY_CLAUDE.md Integration|CLAUDE.md Integration]]
-- [[_COMMUNITY_AST & Semantic Extraction|AST & Semantic Extraction]]
-- [[_COMMUNITY_Community Detection|Community Detection]]
-- [[_COMMUNITY_Audit Trail & Reporting|Audit Trail & Reporting]]
+- [[_COMMUNITY_Graphify Core & Outputs|Graphify Core & Outputs]]
+- [[_COMMUNITY_Session Hooks & Startup|Session Hooks & Startup]]
+- [[_COMMUNITY_Persistent Graph & Updates|Persistent Graph & Updates]]
+- [[_COMMUNITY_Extraction Pipeline|Extraction Pipeline]]
+- [[_COMMUNITY_Audit Trail & Honesty|Audit Trail & Honesty]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `graphify skill` - 17 edges
-2. `session-start-hook skill` - 5 edges
-3. `GraphRAG-ready JSON output` - 3 edges
-4. `CLAUDE.md native integration` - 3 edges
-5. `graphify skill reference` - 2 edges
-6. `community detection` - 2 edges
-7. `GRAPH_REPORT.md audit trail` - 2 edges
+1. `graphify skill` - 19 edges
+2. `startup-hook-skill` - 6 edges
+3. `semantic extraction via subagents` - 3 edges
+4. `persistent graph across sessions` - 3 edges
+5. `honest audit trail EXTRACTED INFERRED AMBIGUOUS` - 3 edges
+6. `incremental update flag` - 3 edges
+7. `async hook mode` - 3 edges
 8. `AST structural extraction` - 2 edges
-9. `semantic extraction subagents` - 2 edges
-10. `MCP stdio server` - 2 edges
+9. `MCP stdio server` - 2 edges
+10. `watch mode auto-rebuild` - 2 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `graphify skill reference` --references--> `graphify skill`  [EXTRACTED]
-  .claude/CLAUDE.md → .claude/skills/graphify/SKILL.md
-- `git post-commit hook integration` --semantically_similar_to--> `SessionStart hook event`  [INFERRED] [semantically similar]
+- `semantic extraction via subagents` --semantically_similar_to--> `dependency installation`  [INFERRED] [semantically similar]
   .claude/skills/graphify/SKILL.md → .claude/skills/session-start-hook/SKILL.md
-- `settings.json hook registration` --semantically_similar_to--> `CLAUDE.md native integration`  [INFERRED] [semantically similar]
-  .claude/skills/session-start-hook/SKILL.md → .claude/skills/graphify/SKILL.md
-- `graphify trigger /graphify` --references--> `graphify skill`  [EXTRACTED]
+- `MCP stdio server` --semantically_similar_to--> `SessionStart hook`  [INFERRED] [semantically similar]
+  .claude/skills/graphify/SKILL.md → .claude/skills/session-start-hook/SKILL.md
+- `graphify skill entry` --references--> `graphify skill`  [EXTRACTED]
   .claude/CLAUDE.md → .claude/skills/graphify/SKILL.md
-- `CLAUDE.md native integration` --references--> `graphify skill reference`  [EXTRACTED]
-  .claude/skills/graphify/SKILL.md → .claude/CLAUDE.md
+- `/graphify trigger` --references--> `graphify skill`  [EXTRACTED]
+  .claude/CLAUDE.md → .claude/skills/graphify/SKILL.md
 
 ## Hyperedges (group relationships)
-- **graphify three output types** — skill_graphify_html_output, skill_graphify_graph_json, skill_graphify_graph_report [EXTRACTED 0.95]
-- **graphify extraction pipeline AST + semantic + merge** — skill_graphify_ast_extraction, skill_graphify_semantic_extraction, skill_graphify_knowledge_graph [EXTRACTED 0.90]
-- **session start hook setup workflow** — skill_session_start_hook_sessionstart, skill_session_start_hook_dependency_install, skill_session_start_hook_settings_json [EXTRACTED 0.90]
+- **graphify three core outputs** — skill_graphify_graph_html, skill_graphify_graph_json, skill_graphify_graph_report [EXTRACTED 0.95]
+- **graphify extraction pipeline AST plus semantic plus merge** — skill_graphify_ast_extraction, skill_graphify_semantic_extraction, skill_graphify_knowledge_graph [EXTRACTED 0.90]
+- **three capabilities distinguishing graphify from Claude alone** — skill_graphify_persistent_graph, skill_graphify_audit_trail, skill_graphify_cross_doc_connections [EXTRACTED 0.95]
 
 ## Communities
 
-### Community 0 - "Graphify Skill Core"
-Cohesion: 0.22
-Nodes (9): graphify trigger /graphify, interactive HTML output, incremental --update mode, knowledge graph output, graphify skill, Neo4j Cypher export, Obsidian vault export, Karpathy raw folder workflow (+1 more)
+### Community 0 - "Graphify Core & Outputs"
+Cohesion: 0.17
+Nodes (12): graphify skill entry, /graphify trigger, community detection, cross-document surprise connections, interactive HTML output, GraphRAG-ready JSON output, GRAPH_REPORT.md audit report, knowledge graph (+4 more)
 
-### Community 1 - "Git Hooks & Session Setup"
-Cohesion: 0.25
-Nodes (8): git post-commit hook integration, async hook mode, CLAUDE_CODE_REMOTE env var, dependency installation idempotent, hook environment variables, session-start-hook skill, rationale: async mode trade-off latency vs race condition, SessionStart hook event
+### Community 1 - "Session Hooks & Startup"
+Cohesion: 0.29
+Nodes (8): MCP stdio server, async hook mode, hook environment variables, startup-hook-skill, async race condition trade-off, rationale: synchronous mode guarantees deps before session, SessionStart hook, .claude/settings.json hook registration
 
-### Community 2 - "Persistent Graph & MCP"
+### Community 2 - "Persistent Graph & Updates"
+Cohesion: 0.5
+Nodes (4): incremental update flag, persistent graph across sessions, rationale: persistent graph enables cross-session queries, watch mode auto-rebuild
+
+### Community 3 - "Extraction Pipeline"
 Cohesion: 0.67
-Nodes (3): GraphRAG-ready JSON output, MCP stdio server, rationale: persistent graph across sessions
+Nodes (3): AST structural extraction, semantic extraction via subagents, dependency installation
 
-### Community 3 - "CLAUDE.md Integration"
+### Community 4 - "Audit Trail & Honesty"
 Cohesion: 0.67
-Nodes (3): graphify skill reference, CLAUDE.md native integration, settings.json hook registration
-
-### Community 4 - "AST & Semantic Extraction"
-Cohesion: 1.0
-Nodes (2): AST structural extraction, semantic extraction subagents
-
-### Community 5 - "Community Detection"
-Cohesion: 1.0
-Nodes (2): community detection, rationale: cross-document community surprise discovery
-
-### Community 6 - "Audit Trail & Reporting"
-Cohesion: 1.0
-Nodes (2): GRAPH_REPORT.md audit trail, rationale: honest audit trail EXTRACTED/INFERRED/AMBIGUOUS
+Nodes (3): honest audit trail EXTRACTED INFERRED AMBIGUOUS, honesty rules never invent edges, rationale: audit trail distinguishes found vs invented edges
 
 ## Knowledge Gaps
-- **14 isolated node(s):** `graphify trigger /graphify`, `knowledge graph output`, `interactive HTML output`, `Whisper audio transcription`, `Obsidian vault export` (+9 more)
+- **16 isolated node(s):** `graphify skill entry`, `/graphify trigger`, `knowledge graph`, `community detection`, `interactive HTML output` (+11 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `AST & Semantic Extraction`** (2 nodes): `AST structural extraction`, `semantic extraction subagents`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community Detection`** (2 nodes): `community detection`, `rationale: cross-document community surprise discovery`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Audit Trail & Reporting`** (2 nodes): `GRAPH_REPORT.md audit trail`, `rationale: honest audit trail EXTRACTED/INFERRED/AMBIGUOUS`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `graphify skill` connect `Graphify Skill Core` to `Git Hooks & Session Setup`, `Persistent Graph & MCP`, `CLAUDE.md Integration`, `AST & Semantic Extraction`, `Community Detection`, `Audit Trail & Reporting`?**
-  _High betweenness centrality (0.849) - this node is a cross-community bridge._
-- **Why does `session-start-hook skill` connect `Git Hooks & Session Setup` to `CLAUDE.md Integration`?**
-  _High betweenness centrality (0.331) - this node is a cross-community bridge._
-- **Why does `CLAUDE.md native integration` connect `CLAUDE.md Integration` to `Graphify Skill Core`?**
-  _High betweenness centrality (0.210) - this node is a cross-community bridge._
-- **What connects `graphify trigger /graphify`, `knowledge graph output`, `interactive HTML output` to the rest of the system?**
-  _14 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `graphify skill` connect `Graphify Core & Outputs` to `Session Hooks & Startup`, `Persistent Graph & Updates`, `Extraction Pipeline`, `Audit Trail & Honesty`?**
+  _High betweenness centrality (0.855) - this node is a cross-community bridge._
+- **Why does `startup-hook-skill` connect `Session Hooks & Startup` to `Extraction Pipeline`?**
+  _High betweenness centrality (0.318) - this node is a cross-community bridge._
+- **Why does `semantic extraction via subagents` connect `Extraction Pipeline` to `Graphify Core & Outputs`?**
+  _High betweenness centrality (0.206) - this node is a cross-community bridge._
+- **What connects `graphify skill entry`, `/graphify trigger`, `knowledge graph` to the rest of the system?**
+  _16 weakly-connected nodes found - possible documentation gaps or missing edges._

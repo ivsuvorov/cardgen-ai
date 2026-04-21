@@ -5,9 +5,9 @@
     "hyperedges": [
       {
         "id": "graphify_three_outputs",
-        "label": "graphify three output types",
+        "label": "graphify three core outputs",
         "nodes": [
-          "skill_graphify_html_output",
+          "skill_graphify_graph_html",
           "skill_graphify_graph_json",
           "skill_graphify_graph_report"
         ],
@@ -18,7 +18,7 @@
       },
       {
         "id": "graphify_extraction_pipeline",
-        "label": "graphify extraction pipeline AST + semantic + merge",
+        "label": "graphify extraction pipeline AST plus semantic plus merge",
         "nodes": [
           "skill_graphify_ast_extraction",
           "skill_graphify_semantic_extraction",
@@ -30,23 +30,23 @@
         "source_file": ".claude/skills/graphify/SKILL.md"
       },
       {
-        "id": "session_hook_workflow",
-        "label": "session start hook setup workflow",
+        "id": "graphify_differentiation_trio",
+        "label": "three capabilities distinguishing graphify from Claude alone",
         "nodes": [
-          "skill_session_start_hook_sessionstart",
-          "skill_session_start_hook_dependency_install",
-          "skill_session_start_hook_settings_json"
+          "skill_graphify_persistent_graph",
+          "skill_graphify_audit_trail",
+          "skill_graphify_cross_doc_connections"
         ],
-        "relation": "participate_in",
+        "relation": "form",
         "confidence": "EXTRACTED",
-        "confidence_score": 0.9,
-        "source_file": ".claude/skills/session-start-hook/SKILL.md"
+        "confidence_score": 0.95,
+        "source_file": ".claude/skills/graphify/SKILL.md"
       }
     ]
   },
   "nodes": [
     {
-      "label": "graphify skill reference",
+      "label": "graphify skill entry",
       "file_type": "document",
       "source_file": ".claude/CLAUDE.md",
       "source_location": "line 2",
@@ -55,11 +55,11 @@
       "author": null,
       "contributor": null,
       "id": "claude_graphify",
-      "community": 3,
-      "norm_label": "graphify skill reference"
+      "community": 0,
+      "norm_label": "graphify skill entry"
     },
     {
-      "label": "graphify trigger /graphify",
+      "label": "/graphify trigger",
       "file_type": "document",
       "source_file": ".claude/CLAUDE.md",
       "source_location": "line 2-3",
@@ -69,13 +69,13 @@
       "contributor": null,
       "id": "claude_graphify_trigger",
       "community": 0,
-      "norm_label": "graphify trigger /graphify"
+      "norm_label": "/graphify trigger"
     },
     {
       "label": "graphify skill",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 2",
+      "source_location": "frontmatter",
       "source_url": null,
       "captured_at": null,
       "author": null,
@@ -85,7 +85,7 @@
       "norm_label": "graphify skill"
     },
     {
-      "label": "knowledge graph output",
+      "label": "knowledge graph",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
       "source_location": "line 9",
@@ -95,7 +95,7 @@
       "contributor": null,
       "id": "skill_graphify_knowledge_graph",
       "community": 0,
-      "norm_label": "knowledge graph output"
+      "norm_label": "knowledge graph"
     },
     {
       "label": "community detection",
@@ -107,7 +107,7 @@
       "author": null,
       "contributor": null,
       "id": "skill_graphify_community_detection",
-      "community": 5,
+      "community": 0,
       "norm_label": "community detection"
     },
     {
@@ -119,7 +119,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_graphify_html_output",
+      "id": "skill_graphify_graph_html",
       "community": 0,
       "norm_label": "interactive html output"
     },
@@ -133,11 +133,11 @@
       "author": null,
       "contributor": null,
       "id": "skill_graphify_graph_json",
-      "community": 2,
+      "community": 0,
       "norm_label": "graphrag-ready json output"
     },
     {
-      "label": "GRAPH_REPORT.md audit trail",
+      "label": "GRAPH_REPORT.md audit report",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
       "source_location": "line 9",
@@ -146,86 +146,73 @@
       "author": null,
       "contributor": null,
       "id": "skill_graphify_graph_report",
-      "community": 6,
-      "norm_label": "graph_report.md audit trail"
+      "community": 0,
+      "norm_label": "graph_report.md audit report"
     },
     {
       "label": "AST structural extraction",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 176",
+      "source_location": "Step 3 Part A",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "skill_graphify_ast_extraction",
-      "community": 4,
+      "community": 3,
       "norm_label": "ast structural extraction"
     },
     {
-      "label": "semantic extraction subagents",
+      "label": "semantic extraction via subagents",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 199",
+      "source_location": "Step 3 Part B",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "skill_graphify_semantic_extraction",
-      "community": 4,
-      "norm_label": "semantic extraction subagents"
+      "community": 3,
+      "norm_label": "semantic extraction via subagents"
     },
     {
-      "label": "Whisper audio transcription",
+      "label": "persistent graph across sessions",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 119",
+      "source_location": "line 44",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_graphify_whisper_transcription",
-      "community": 0,
-      "norm_label": "whisper audio transcription"
-    },
-    {
-      "label": "Obsidian vault export",
-      "file_type": "document",
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 490",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "skill_graphify_obsidian_vault",
-      "community": 0,
-      "norm_label": "obsidian vault export"
-    },
-    {
-      "label": "Neo4j Cypher export",
-      "file_type": "document",
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 584",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "skill_graphify_neo4j_export",
-      "community": 0,
-      "norm_label": "neo4j cypher export"
-    },
-    {
-      "label": "MCP stdio server",
-      "file_type": "document",
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 667",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "skill_graphify_mcp_server",
+      "id": "skill_graphify_persistent_graph",
       "community": 2,
-      "norm_label": "mcp stdio server"
+      "norm_label": "persistent graph across sessions"
+    },
+    {
+      "label": "honest audit trail EXTRACTED INFERRED AMBIGUOUS",
+      "file_type": "document",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "line 45",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_graphify_audit_trail",
+      "community": 4,
+      "norm_label": "honest audit trail extracted inferred ambiguous"
+    },
+    {
+      "label": "cross-document surprise connections",
+      "file_type": "document",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "line 46",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_graphify_cross_doc_connections",
+      "community": 0,
+      "norm_label": "cross-document surprise connections"
     },
     {
       "label": "Karpathy raw folder workflow",
@@ -241,98 +228,98 @@
       "norm_label": "karpathy raw folder workflow"
     },
     {
-      "label": "rationale: persistent graph across sessions",
+      "label": "Obsidian vault export",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 45-46",
+      "source_location": "Step 6",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_graphify_rationale_persistent_graph",
+      "id": "skill_graphify_obsidian_vault",
+      "community": 0,
+      "norm_label": "obsidian vault export"
+    },
+    {
+      "label": "Neo4j export",
+      "file_type": "document",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "Step 7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_graphify_neo4j_export",
+      "community": 0,
+      "norm_label": "neo4j export"
+    },
+    {
+      "label": "MCP stdio server",
+      "file_type": "document",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "Step 7d",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_graphify_mcp_server",
+      "community": 1,
+      "norm_label": "mcp stdio server"
+    },
+    {
+      "label": "watch mode auto-rebuild",
+      "file_type": "document",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "--watch section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_graphify_watch_mode",
       "community": 2,
-      "norm_label": "rationale: persistent graph across sessions"
+      "norm_label": "watch mode auto-rebuild"
     },
     {
-      "label": "rationale: honest audit trail EXTRACTED/INFERRED/AMBIGUOUS",
+      "label": "incremental update flag",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 47-48",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "skill_graphify_rationale_audit_trail",
-      "community": 6,
-      "norm_label": "rationale: honest audit trail extracted/inferred/ambiguous"
-    },
-    {
-      "label": "rationale: cross-document community surprise discovery",
-      "file_type": "document",
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 49-50",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "skill_graphify_rationale_cross_doc",
-      "community": 5,
-      "norm_label": "rationale: cross-document community surprise discovery"
-    },
-    {
-      "label": "incremental --update mode",
-      "file_type": "document",
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 796",
+      "source_location": "--update section",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "skill_graphify_incremental_update",
-      "community": 0,
-      "norm_label": "incremental --update mode"
+      "community": 2,
+      "norm_label": "incremental update flag"
     },
     {
-      "label": "git post-commit hook integration",
+      "label": "honesty rules never invent edges",
       "file_type": "document",
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 1283",
+      "source_location": "Honesty Rules section",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_graphify_git_hook",
-      "community": 1,
-      "norm_label": "git post-commit hook integration"
+      "id": "skill_graphify_honesty_rules",
+      "community": 4,
+      "norm_label": "honesty rules never invent edges"
     },
     {
-      "label": "CLAUDE.md native integration",
-      "file_type": "document",
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 1299",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "skill_graphify_claude_md_integration",
-      "community": 3,
-      "norm_label": "claude.md native integration"
-    },
-    {
-      "label": "session-start-hook skill",
+      "label": "startup-hook-skill",
       "file_type": "document",
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 2",
+      "source_location": "frontmatter",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "skill_session_start_hook_name",
       "community": 1,
-      "norm_label": "session-start-hook skill"
+      "norm_label": "startup-hook-skill"
     },
     {
-      "label": "SessionStart hook event",
+      "label": "SessionStart hook",
       "file_type": "document",
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
       "source_location": "line 8",
@@ -342,7 +329,7 @@
       "contributor": null,
       "id": "skill_session_start_hook_sessionstart",
       "community": 1,
-      "norm_label": "sessionstart hook event"
+      "norm_label": "sessionstart hook"
     },
     {
       "label": "async hook mode",
@@ -358,23 +345,23 @@
       "norm_label": "async hook mode"
     },
     {
-      "label": "rationale: async mode trade-off latency vs race condition",
+      "label": "dependency installation",
       "file_type": "document",
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 33-34",
+      "source_location": "Step 1-2",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_session_start_hook_rationale_async",
-      "community": 1,
-      "norm_label": "rationale: async mode trade-off latency vs race condition"
+      "id": "skill_session_start_hook_dependency_install",
+      "community": 3,
+      "norm_label": "dependency installation"
     },
     {
       "label": "hook environment variables",
       "file_type": "document",
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 37",
+      "source_location": "Environment Variables section",
       "source_url": null,
       "captured_at": null,
       "author": null,
@@ -384,43 +371,69 @@
       "norm_label": "hook environment variables"
     },
     {
-      "label": "settings.json hook registration",
+      "label": "async race condition trade-off",
       "file_type": "document",
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 98",
+      "source_location": "line 34",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_session_start_hook_race_condition",
+      "community": 1,
+      "norm_label": "async race condition trade-off"
+    },
+    {
+      "label": ".claude/settings.json hook registration",
+      "file_type": "document",
+      "source_file": ".claude/skills/session-start-hook/SKILL.md",
+      "source_location": "Step 4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "skill_session_start_hook_settings_json",
-      "community": 3,
-      "norm_label": "settings.json hook registration"
+      "community": 1,
+      "norm_label": ".claude/settings.json hook registration"
     },
     {
-      "label": "dependency installation idempotent",
+      "label": "rationale: persistent graph enables cross-session queries",
       "file_type": "document",
-      "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 76",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "line 44",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_session_start_hook_dependency_install",
-      "community": 1,
-      "norm_label": "dependency installation idempotent"
+      "id": "skill_graphify_rationale_persistent",
+      "community": 2,
+      "norm_label": "rationale: persistent graph enables cross-session queries"
     },
     {
-      "label": "CLAUDE_CODE_REMOTE env var",
+      "label": "rationale: audit trail distinguishes found vs invented edges",
       "file_type": "document",
-      "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 48",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "line 45",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "skill_session_start_hook_claude_code_remote",
+      "id": "skill_graphify_rationale_audit",
+      "community": 4,
+      "norm_label": "rationale: audit trail distinguishes found vs invented edges"
+    },
+    {
+      "label": "rationale: synchronous mode guarantees deps before session",
+      "file_type": "document",
+      "source_file": ".claude/skills/session-start-hook/SKILL.md",
+      "source_location": "Wrap up section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_session_start_hook_rationale_sync",
       "community": 1,
-      "norm_label": "claude_code_remote env var"
+      "norm_label": "rationale: synchronous mode guarantees deps before session"
     }
   ],
   "links": [
@@ -440,20 +453,8 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 1299",
-      "weight": 1.0,
-      "_src": "skill_graphify_claude_md_integration",
-      "_tgt": "claude_graphify",
-      "source": "claude_graphify",
-      "target": "skill_graphify_claude_md_integration"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": ".claude/CLAUDE.md",
-      "source_location": "line 2-3",
+      "source_location": "line 3",
       "weight": 1.0,
       "_src": "claude_graphify_trigger",
       "_tgt": "skill_graphify_name",
@@ -465,7 +466,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 9",
+      "source_location": "frontmatter",
       "weight": 1.0,
       "_src": "skill_graphify_name",
       "_tgt": "skill_graphify_knowledge_graph",
@@ -492,9 +493,9 @@
       "source_location": "line 9",
       "weight": 1.0,
       "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_html_output",
+      "_tgt": "skill_graphify_graph_html",
       "source": "skill_graphify_name",
-      "target": "skill_graphify_html_output"
+      "target": "skill_graphify_graph_html"
     },
     {
       "relation": "references",
@@ -525,7 +526,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 176",
+      "source_location": "Step 3 Part A",
       "weight": 1.0,
       "_src": "skill_graphify_name",
       "_tgt": "skill_graphify_ast_extraction",
@@ -537,7 +538,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 199",
+      "source_location": "Step 3 Part B",
       "weight": 1.0,
       "_src": "skill_graphify_name",
       "_tgt": "skill_graphify_semantic_extraction",
@@ -549,48 +550,36 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 119",
+      "source_location": "line 44",
       "weight": 1.0,
       "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_whisper_transcription",
+      "_tgt": "skill_graphify_persistent_graph",
       "source": "skill_graphify_name",
-      "target": "skill_graphify_whisper_transcription"
+      "target": "skill_graphify_persistent_graph"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 490",
+      "source_location": "line 45",
       "weight": 1.0,
       "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_obsidian_vault",
+      "_tgt": "skill_graphify_audit_trail",
       "source": "skill_graphify_name",
-      "target": "skill_graphify_obsidian_vault"
+      "target": "skill_graphify_audit_trail"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 584",
+      "source_location": "line 46",
       "weight": 1.0,
       "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_neo4j_export",
+      "_tgt": "skill_graphify_cross_doc_connections",
       "source": "skill_graphify_name",
-      "target": "skill_graphify_neo4j_export"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 667",
-      "weight": 1.0,
-      "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_mcp_server",
-      "source": "skill_graphify_name",
-      "target": "skill_graphify_mcp_server"
+      "target": "skill_graphify_cross_doc_connections"
     },
     {
       "relation": "references",
@@ -609,7 +598,55 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 796",
+      "source_location": "Step 6",
+      "weight": 1.0,
+      "_src": "skill_graphify_name",
+      "_tgt": "skill_graphify_obsidian_vault",
+      "source": "skill_graphify_name",
+      "target": "skill_graphify_obsidian_vault"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "Step 7",
+      "weight": 1.0,
+      "_src": "skill_graphify_name",
+      "_tgt": "skill_graphify_neo4j_export",
+      "source": "skill_graphify_name",
+      "target": "skill_graphify_neo4j_export"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "Step 7d",
+      "weight": 1.0,
+      "_src": "skill_graphify_name",
+      "_tgt": "skill_graphify_mcp_server",
+      "source": "skill_graphify_name",
+      "target": "skill_graphify_mcp_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "--watch section",
+      "weight": 1.0,
+      "_src": "skill_graphify_name",
+      "_tgt": "skill_graphify_watch_mode",
+      "source": "skill_graphify_name",
+      "target": "skill_graphify_watch_mode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "--update section",
       "weight": 1.0,
       "_src": "skill_graphify_name",
       "_tgt": "skill_graphify_incremental_update",
@@ -621,108 +658,108 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 1283",
+      "source_location": "Honesty Rules section",
       "weight": 1.0,
       "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_git_hook",
+      "_tgt": "skill_graphify_honesty_rules",
       "source": "skill_graphify_name",
-      "target": "skill_graphify_git_hook"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 1299",
-      "weight": 1.0,
-      "_src": "skill_graphify_name",
-      "_tgt": "skill_graphify_claude_md_integration",
-      "source": "skill_graphify_name",
-      "target": "skill_graphify_claude_md_integration"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 49-50",
-      "weight": 1.0,
-      "_src": "skill_graphify_rationale_cross_doc",
-      "_tgt": "skill_graphify_community_detection",
-      "source": "skill_graphify_community_detection",
-      "target": "skill_graphify_rationale_cross_doc"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 45-46",
-      "weight": 1.0,
-      "_src": "skill_graphify_rationale_persistent_graph",
-      "_tgt": "skill_graphify_graph_json",
-      "source": "skill_graphify_graph_json",
-      "target": "skill_graphify_rationale_persistent_graph"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 667",
-      "weight": 1.0,
-      "_src": "skill_graphify_mcp_server",
-      "_tgt": "skill_graphify_graph_json",
-      "source": "skill_graphify_graph_json",
-      "target": "skill_graphify_mcp_server"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 47-48",
-      "weight": 1.0,
-      "_src": "skill_graphify_rationale_audit_trail",
-      "_tgt": "skill_graphify_graph_report",
-      "source": "skill_graphify_graph_report",
-      "target": "skill_graphify_rationale_audit_trail"
+      "target": "skill_graphify_honesty_rules"
     },
     {
       "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": ".claude/skills/graphify/SKILL.md",
-      "source_location": "line 169",
+      "source_location": "Step 3",
       "weight": 1.0,
-      "_src": "skill_graphify_semantic_extraction",
-      "_tgt": "skill_graphify_ast_extraction",
+      "_src": "skill_graphify_ast_extraction",
+      "_tgt": "skill_graphify_semantic_extraction",
       "source": "skill_graphify_ast_extraction",
       "target": "skill_graphify_semantic_extraction"
     },
     {
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
-      "confidence_score": 0.65,
+      "confidence_score": 0.62,
       "source_file": ".claude/skills/graphify/SKILL.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "skill_graphify_git_hook",
-      "_tgt": "skill_session_start_hook_sessionstart",
-      "source": "skill_graphify_git_hook",
-      "target": "skill_session_start_hook_sessionstart"
+      "_src": "skill_graphify_semantic_extraction",
+      "_tgt": "skill_session_start_hook_dependency_install",
+      "source": "skill_graphify_semantic_extraction",
+      "target": "skill_session_start_hook_dependency_install"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "--update section",
+      "weight": 1.0,
+      "_src": "skill_graphify_persistent_graph",
+      "_tgt": "skill_graphify_incremental_update",
+      "source": "skill_graphify_persistent_graph",
+      "target": "skill_graphify_incremental_update"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "line 44",
+      "weight": 1.0,
+      "_src": "skill_graphify_rationale_persistent",
+      "_tgt": "skill_graphify_persistent_graph",
+      "source": "skill_graphify_persistent_graph",
+      "target": "skill_graphify_rationale_persistent"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "Honesty Rules section",
+      "weight": 1.0,
+      "_src": "skill_graphify_audit_trail",
+      "_tgt": "skill_graphify_honesty_rules",
+      "source": "skill_graphify_audit_trail",
+      "target": "skill_graphify_honesty_rules"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "line 45",
+      "weight": 1.0,
+      "_src": "skill_graphify_rationale_audit",
+      "_tgt": "skill_graphify_audit_trail",
+      "source": "skill_graphify_audit_trail",
+      "target": "skill_graphify_rationale_audit"
     },
     {
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
-      "confidence_score": 0.62,
-      "source_file": ".claude/skills/session-start-hook/SKILL.md",
+      "confidence_score": 0.61,
+      "source_file": ".claude/skills/graphify/SKILL.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "skill_session_start_hook_settings_json",
-      "_tgt": "skill_graphify_claude_md_integration",
-      "source": "skill_graphify_claude_md_integration",
-      "target": "skill_session_start_hook_settings_json"
+      "_src": "skill_graphify_mcp_server",
+      "_tgt": "skill_session_start_hook_sessionstart",
+      "source": "skill_graphify_mcp_server",
+      "target": "skill_session_start_hook_sessionstart"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": "--watch section",
+      "weight": 1.0,
+      "_src": "skill_graphify_watch_mode",
+      "_tgt": "skill_graphify_incremental_update",
+      "source": "skill_graphify_watch_mode",
+      "target": "skill_graphify_incremental_update"
     },
     {
       "relation": "references",
@@ -741,7 +778,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 24",
+      "source_location": "Async Mode section",
       "weight": 1.0,
       "_src": "skill_session_start_hook_name",
       "_tgt": "skill_session_start_hook_async_mode",
@@ -753,7 +790,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 37",
+      "source_location": "Step 1-2",
+      "weight": 1.0,
+      "_src": "skill_session_start_hook_name",
+      "_tgt": "skill_session_start_hook_dependency_install",
+      "source": "skill_session_start_hook_name",
+      "target": "skill_session_start_hook_dependency_install"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/session-start-hook/SKILL.md",
+      "source_location": "Environment Variables section",
       "weight": 1.0,
       "_src": "skill_session_start_hook_name",
       "_tgt": "skill_session_start_hook_env_vars",
@@ -765,7 +814,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 98",
+      "source_location": "line 34",
+      "weight": 1.0,
+      "_src": "skill_session_start_hook_name",
+      "_tgt": "skill_session_start_hook_race_condition",
+      "source": "skill_session_start_hook_name",
+      "target": "skill_session_start_hook_race_condition"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/session-start-hook/SKILL.md",
+      "source_location": "Step 4",
       "weight": 1.0,
       "_src": "skill_session_start_hook_name",
       "_tgt": "skill_session_start_hook_settings_json",
@@ -773,48 +834,36 @@
       "target": "skill_session_start_hook_settings_json"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 76",
-      "weight": 1.0,
-      "_src": "skill_session_start_hook_name",
-      "_tgt": "skill_session_start_hook_dependency_install",
-      "source": "skill_session_start_hook_name",
-      "target": "skill_session_start_hook_dependency_install"
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 33-34",
+      "source_location": "Wrap up section",
       "weight": 1.0,
-      "_src": "skill_session_start_hook_rationale_async",
+      "_src": "skill_session_start_hook_rationale_sync",
       "_tgt": "skill_session_start_hook_async_mode",
       "source": "skill_session_start_hook_async_mode",
-      "target": "skill_session_start_hook_rationale_async"
+      "target": "skill_session_start_hook_rationale_sync"
     },
     {
-      "relation": "references",
+      "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/session-start-hook/SKILL.md",
-      "source_location": "line 48",
+      "source_location": "line 34",
       "weight": 1.0,
-      "_src": "skill_session_start_hook_env_vars",
-      "_tgt": "skill_session_start_hook_claude_code_remote",
-      "source": "skill_session_start_hook_env_vars",
-      "target": "skill_session_start_hook_claude_code_remote"
+      "_src": "skill_session_start_hook_async_mode",
+      "_tgt": "skill_session_start_hook_race_condition",
+      "source": "skill_session_start_hook_async_mode",
+      "target": "skill_session_start_hook_race_condition"
     }
   ],
   "hyperedges": [
     {
       "id": "graphify_three_outputs",
-      "label": "graphify three output types",
+      "label": "graphify three core outputs",
       "nodes": [
-        "skill_graphify_html_output",
+        "skill_graphify_graph_html",
         "skill_graphify_graph_json",
         "skill_graphify_graph_report"
       ],
@@ -825,7 +874,7 @@
     },
     {
       "id": "graphify_extraction_pipeline",
-      "label": "graphify extraction pipeline AST + semantic + merge",
+      "label": "graphify extraction pipeline AST plus semantic plus merge",
       "nodes": [
         "skill_graphify_ast_extraction",
         "skill_graphify_semantic_extraction",
@@ -837,17 +886,17 @@
       "source_file": ".claude/skills/graphify/SKILL.md"
     },
     {
-      "id": "session_hook_workflow",
-      "label": "session start hook setup workflow",
+      "id": "graphify_differentiation_trio",
+      "label": "three capabilities distinguishing graphify from Claude alone",
       "nodes": [
-        "skill_session_start_hook_sessionstart",
-        "skill_session_start_hook_dependency_install",
-        "skill_session_start_hook_settings_json"
+        "skill_graphify_persistent_graph",
+        "skill_graphify_audit_trail",
+        "skill_graphify_cross_doc_connections"
       ],
-      "relation": "participate_in",
+      "relation": "form",
       "confidence": "EXTRACTED",
-      "confidence_score": 0.9,
-      "source_file": ".claude/skills/session-start-hook/SKILL.md"
+      "confidence_score": 0.95,
+      "source_file": ".claude/skills/graphify/SKILL.md"
     }
   ]
 }
