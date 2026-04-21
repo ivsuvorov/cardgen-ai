@@ -11,8 +11,14 @@
       "input_tokens": 3200,
       "output_tokens": 1800,
       "files": 3
+    },
+    {
+      "date": "2026-04-21T14:45:39.671517+00:00",
+      "input_tokens": 6800,
+      "output_tokens": 2100,
+      "files": 45
     }
   ],
-  "total_input_tokens": 6400,
-  "total_output_tokens": 2900
+  "total_input_tokens": 13200,
+  "total_output_tokens": 5000
 }
