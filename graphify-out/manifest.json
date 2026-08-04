@@ -1,47 +1,257 @@
 {
-  "/home/user/cardgen-ai/server.js": 1776688622.0,
-  "/home/user/cardgen-ai/server.py": 1776688622.0,
-  "/home/user/cardgen-ai/public/app.js": 1776688622.0,
-  "/home/user/cardgen-ai/api/generate-text.py": 1776688622.0,
-  "/home/user/cardgen-ai/api/generate-image-prompt.py": 1776688622.0,
-  "/home/user/cardgen-ai/requirements.txt": 1776688622.0,
-  "/home/user/cardgen-ai/public/index.html": 1776688622.0,
-  "/home/user/cardgen-ai/graphify-out/graph.html": 1776782708.7604573,
-  "/home/user/cardgen-ai/graphify-out/GRAPH_REPORT.md": 1776782700.781457,
-  "/home/user/cardgen-ai/graphify-out/obsidian/rationale persistent graph across sessions.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/CLAUDE.md native integration.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/Neo4j Cypher export.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/GRAPH_REPORT.md audit trail.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/SessionStart hook event.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/graphify trigger graphify.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/graphify skill reference.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 6.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/Obsidian vault export.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/knowledge graph output.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/dependency installation idempotent.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/GraphRAG-ready JSON output.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/Karpathy raw folder workflow.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/rationale cross-document community surprise discovery.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 0.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/incremental --update mode.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 5.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/community detection.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/semantic extraction subagents.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/CLAUDE_CODE_REMOTE env var.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/Whisper audio transcription.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 2.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/rationale honest audit trail EXTRACTEDINFERREDAMBIGUOUS.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/async hook mode.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 4.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/session-start-hook skill.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/MCP stdio server.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/settings.json hook registration.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/AST structural extraction.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/graphify skill.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/interactive HTML output.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 1.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/hook environment variables.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/rationale async mode trade-off latency vs race condition.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/git post-commit hook integration.md": 1776691226.0,
-  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 3.md": 1776691226.0
+  "/home/user/cardgen-ai/server.js": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "dcb78fabdc45ddb724c2553cc444c8e8",
+    "semantic_hash": "dcb78fabdc45ddb724c2553cc444c8e8"
+  },
+  "/home/user/cardgen-ai/server.py": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "caf9ffe3399c97dadeae281e1462bdf1",
+    "semantic_hash": "caf9ffe3399c97dadeae281e1462bdf1"
+  },
+  "/home/user/cardgen-ai/public/app.js": {
+    "mtime": 1785829270.6817245,
+    "ast_hash": "d431bb35f8113e022e323402d429e11f",
+    "semantic_hash": "d431bb35f8113e022e323402d429e11f"
+  },
+  "/home/user/cardgen-ai/api/generate-text.py": {
+    "mtime": 1785829270.6817245,
+    "ast_hash": "5d8d2546029363ba9aca1774b7a066f5",
+    "semantic_hash": "5d8d2546029363ba9aca1774b7a066f5"
+  },
+  "/home/user/cardgen-ai/api/generate-image-prompt.py": {
+    "mtime": 1785829270.6798587,
+    "ast_hash": "68c6f8d440c49a6c9406aa2ca22610f7",
+    "semantic_hash": "68c6f8d440c49a6c9406aa2ca22610f7"
+  },
+  "/home/user/cardgen-ai/requirements.txt": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "3b3901c3728a9af350110118afd2bd17",
+    "semantic_hash": "3b3901c3728a9af350110118afd2bd17"
+  },
+  "/home/user/cardgen-ai/public/index.html": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "3e5ad1da9b2b591256fa9f04e2126bb1",
+    "semantic_hash": "3e5ad1da9b2b591256fa9f04e2126bb1"
+  },
+  "/home/user/cardgen-ai/graphify-out/graph.html": {
+    "mtime": 1776782708.7604573,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/GRAPH_REPORT.md": {
+    "mtime": 1776782700.781457,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/rationale persistent graph across sessions.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/CLAUDE.md native integration.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/Neo4j Cypher export.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/GRAPH_REPORT.md audit trail.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/SessionStart hook event.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/graphify trigger graphify.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/graphify skill reference.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 6.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/Obsidian vault export.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/knowledge graph output.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/dependency installation idempotent.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/GraphRAG-ready JSON output.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/Karpathy raw folder workflow.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/rationale cross-document community surprise discovery.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 0.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/incremental --update mode.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 5.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/community detection.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/semantic extraction subagents.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/CLAUDE_CODE_REMOTE env var.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/Whisper audio transcription.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 2.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/rationale honest audit trail EXTRACTEDINFERREDAMBIGUOUS.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/async hook mode.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 4.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/session-start-hook skill.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/MCP stdio server.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/settings.json hook registration.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/AST structural extraction.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/graphify skill.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/interactive HTML output.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 1.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/hook environment variables.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/rationale async mode trade-off latency vs race condition.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/git post-commit hook integration.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/graphify-out/obsidian/_COMMUNITY_Community 3.md": {
+    "mtime": 1776691226.0,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "/home/user/cardgen-ai/.claude/launch.json": {
+    "mtime": 1785829270.6798587,
+    "ast_hash": "532959bc39aba60dbea7a1dcb5061029",
+    "semantic_hash": "532959bc39aba60dbea7a1dcb5061029"
+  },
+  "/home/user/cardgen-ai/package.json": {
+    "mtime": 1785829270.6817245,
+    "ast_hash": "6014b3b4f8af3cc4a837a8ea2eaeed99",
+    "semantic_hash": "6014b3b4f8af3cc4a837a8ea2eaeed99"
+  },
+  "/home/user/cardgen-ai/pyproject.toml": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "b8b87763c5bab3b4ea31425a9934aaac",
+    "semantic_hash": "b8b87763c5bab3b4ea31425a9934aaac"
+  },
+  "/home/user/cardgen-ai/run.sh": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "5d61c268ff3300a9a4f02b982d2f05ab",
+    "semantic_hash": "5d61c268ff3300a9a4f02b982d2f05ab"
+  },
+  "/home/user/cardgen-ai/vercel.json": {
+    "mtime": 1785829270.6838586,
+    "ast_hash": "6543c2df65f0a044d4253733ea8e1774",
+    "semantic_hash": "6543c2df65f0a044d4253733ea8e1774"
+  },
+  "/home/user/cardgen-ai/render.yaml": {
+    "mtime": 1785829270.682603,
+    "ast_hash": "22d6889aaa728f914a3c2070f1ad99dd",
+    "semantic_hash": "22d6889aaa728f914a3c2070f1ad99dd"
+  }
 }
